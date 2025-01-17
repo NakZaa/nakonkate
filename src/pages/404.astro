@@ -1,0 +1,22 @@
+---
+import BackToPrev from "@/components/BackToPrev.astro";
+import Container from "@/components/Container.astro";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout title="404" description="error">
+  <Container>
+    <div class="animate">
+      <BackToPrev href="/"> Back to home </BackToPrev>
+    </div>
+    <div class="my-10 animate flex flex-col items-center">
+      <div class="my-10 text-2xl font-semibold text-black dark:text-white">
+        404
+      </div>
+      <div class="text-center flex flex-col items-center">
+        <p>Cannot find the page you&apos;re looking for.</p>
+        <p>Maybe I renamed or deleted the page. Please try again.</p>
+      </div>
+    </div>
+  </Container>
+</Layout>

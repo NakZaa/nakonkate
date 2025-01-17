@@ -1,0 +1,41 @@
+---
+import { SITE } from "@/consts";
+import Container from "./Container.astro";
+import Link from "./Link.astro";
+import { cn } from "@/lib/utils";
+---
+
+<header>
+  <Container>
+    <div class="flex flex-wrap gap-y-2 justify-between items-center">
+      <Link href="/" underline={false}>
+        <div class="font-semibold">{SITE.NAME} 🦦</div>
+      </Link>
+      <nav class="flex gap-1 items-center justify-center">
+        <Link href="/work">work</Link>
+        <span>{`/`}</span>
+        <Link href="/projects">projects</Link>
+
+        <button
+          id="header-theme-button"
+          aria-label={`Toggle light and dark theme`}
+          class={cn(
+            "flex ml-4",
+            "size-9 rounded-full p-2 items-center justify-center",
+            "bg-transparent hover:bg-black/5 dark:hover:bg-white/20",
+            "stroke-current hover:stroke-black hover:dark:stroke-white",
+            "border border-black/10 dark:border-white/25",
+            "transition-colors duration-300 ease-in-out",
+          )}
+        >
+          <svg class="size-full block dark:hidden">
+            <use href="/ui.svg#sun"></use>
+          </svg>
+          <svg class="size-full hidden dark:block">
+            <use href="/ui.svg#moon"></use>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </Container>
+</header>

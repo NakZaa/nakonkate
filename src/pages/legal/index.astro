@@ -1,0 +1,81 @@
+---
+import BackToPrev from "@/components/BackToPrev.astro";
+import Container from "@/components/Container.astro";
+import FormattedDate from "@/components/FormattedDate.astro";
+import { LEGAL } from "@/consts";
+import Layout from "@/layouts/Layout.astro";
+
+const lastUpdated = new Date("2024-11-12");
+---
+
+<Layout title={LEGAL.TITLE} description={LEGAL.DESCRIPTION}>
+  <Container>
+    <div class="animate">
+      <BackToPrev href="/"> Back to home</BackToPrev>
+    </div>
+    <div class="space-y-1 my-10">
+      <div class="animate flex items-center gap-1.5">
+        <div class="font-base text-sm">
+          Last Updated: <FormattedDate date={lastUpdated} />
+        </div>
+      </div>
+      <div class="animate text-2xl font-semibold text-black dark:text-white">
+        privacy policy
+      </div>
+    </div>
+
+    <article class="animate">
+      <div class="space-y-4">
+        <p>
+          Thanks for stopping by. This <b>Privacy Policy</b> is here to let you know
+          how your data is managed around here. My website is main purpose is to
+          showcase my work, and as a law student, I&apos;m all about respecting your
+          privacy.
+        </p>
+        <h3>What Information I Collect</h3>
+        <p>
+          I don&apos;t actively collect any personal information. There is no
+          account creation, no tracking cookies, and definitely no data
+          gathering.
+        </p>
+        <h3>Contact Info</h3>
+        <p>
+          If you reach out via email, the info you provide is entirely up to
+          you. I will only use it to reply and have a conversation with you.
+        </p>
+        <h3>How I Use the Information</h3>
+        <p>Here&apos;s what I might do with any information I collect:</p>
+        <ul>
+          <li>Make sure the site is running smoothly</li>
+          <li>Improve the website</li>
+          <li>Respond to your questions</li>
+        </ul>
+        <h3>Sharing Your Information</h3>
+        <p>
+          I <b>do not</b> sell, trade, or rent your personal info. If you shared
+          something sensitive by accident, feel free to reach out, and I&apos;ll
+          help you remove it.
+        </p>
+        <h3>Security</h3>
+        <p>
+          I will do my best to keep any info you share safe. While I&apos;ll
+          take reasonable steps to protect your info, I can&apos;t promise 100%
+          security due to the nature of the internet.
+        </p>
+        <h3>Policy Updates</h3>
+        <p>
+          This policy is current as of <b
+            ><FormattedDate date={lastUpdated} /></b
+          >. If I make any changes, it&apos;ll update it here.
+        </p>
+        <h3>Got Questions?</h3>
+        <p>
+          If you have any questions, concerns, or just want to say hi, drop me
+          an email at{" "}
+          <a href="mailto:nakonkate.t@gmail.com">nakonkate.t@gmail.com</a>.
+          I&apos;d love to hear from you!
+        </p>
+      </div>
+    </article>
+  </Container>
+</Layout>
